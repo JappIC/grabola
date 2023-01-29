@@ -1,0 +1,37 @@
+/* style.css */
+@font-face{
+    font-family: "Mi tipografia";
+    src:
+        url("fonts/") format("woof2");
+    font-display: swap;
+}
+
+:root{
+    --width-machine: 250px;
+    --height-machine: calc(var(--width-machine) *2.5);
+
+    --dark-color: #1E0E30;
+    --medium-color: #4B0082;
+    --shadow-color: #6806ad;
+    --light-color: #9932CC;
+
+    --light-color-btn: #dc143c;
+    --dark-color-btn: #660a1b;
+}
+
+body {
+    margin: 0;
+    background: rgb(77, 77, 77);
+    color: #333;
+    font-family: sans-serif;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+  
+main {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
