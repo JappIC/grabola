@@ -1,4 +1,4 @@
-# create-svelte
+# LA GRABOLA
 
 La Grabola es una app que simula la máquina del gancho que se usa para sacar una bola con la peculiaridad de que al abrirla se reproducirá un video musical de YouTube. Desarrollada en HTML CSS y JS con la ayuda del Framework SvelteKit
 
