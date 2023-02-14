@@ -1,28 +1,6 @@
 
 <script>
-
-    let joystick = 0;
-
-    /**
-    * @param {{ keyCode: any; }} e
-    */
-
-    function onKeyDown(e) {
-
-        const {key} = e.keyCode
-
-        if( e.keyCode === 37 ){
-            joystick = -25
-        } else if( e.keyCode === 39 ){
-            joystick = 25
-        }
-
-        setTimeout(()=>{
-            joystick = 0
-        }, 500);
-
-    }
-
+    export let joystick = 0;
 </script>
 
 <div class="claw-joystick">
@@ -33,7 +11,6 @@
     <div class="base"></div>
     <div class="shadow"></div>
 </div>
-<svelte:window on:keydown|preventDefault={onKeyDown} />
 
 <style>
 

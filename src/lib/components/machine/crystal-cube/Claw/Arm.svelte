@@ -1,50 +1,17 @@
 <script>
-
-    // @ts-nocheck
-
     import Finger from "./Finger.svelte";
+    import Ball from "../../ball.svelte";
 
-    let
-        armY = -170,
+    export let
+        showBall = true,
+        dropBall = false,
         clawRotateZ = 0,
         fingerRotateZ = 65,
-        down = false
+        down = false,
+        img = ""
     ;
-    
-    /**
-    * @param {{ keyCode: any; }} e
-    */
 
-    function onKeyDown(e) {
-
-        const {key} = e.keyCode
-
-        if( e.keyCode === 37 ){
-            clawRotateZ = -10
-        } else if( e.keyCode === 39 ){
-            clawRotateZ = 10
-        }
-
-        setTimeout(()=>{
-            clawRotateZ = 0
-        }, 500);
-
-
-        if( e.keyCode === 32 ){
-            
-            down = true
-            
-
-            setTimeout(()=>{
-                fingerRotateZ = 50
-            }, 1000);
-
-            setTimeout(()=>{
-                down = false
-                fingerRotateZ = 65
-            }, 5000);
-        }
-    }
+    //console.log($musicList[ballRandom])
 
 </script>
 
@@ -52,21 +19,17 @@
     <div class="extender-claw"></div>
     <div class="claw" style="transform: rotateZ({clawRotateZ}deg)">
         <div class="axis"></div>
-        <Finger style="transform: rotateZ({fingerRotateZ}deg)"/>
-        <Finger style="transform: rotateZ(-{fingerRotateZ}deg) rotateY(180deg);" />
+        <Finger transform="rotateZ({fingerRotateZ}deg)"/>
+        <Finger transform="rotateZ(-{fingerRotateZ}deg) rotateY(180deg)" />
     </div>
+    <Ball {showBall} {dropBall} {img}/>
 </div>
-<svelte:window on:keydown|preventDefault={onKeyDown} />
 
 <style>
 
     .arm{
         transition: translate 1s;
         translate: 0 -170px
-    }
-
-    .down{
-        animation: down 3s cubic-bezier(0.65, 0, 0.35, 1);
     }
 
     .arm .extender-claw {
@@ -101,6 +64,10 @@
         );
         position: relative;
         z-index: 5;
+    }
+
+    .down{
+        animation: down 3s cubic-bezier(0.65, 0, 0.35, 1);
     }
 
     @keyframes down{

@@ -12,3 +12,11 @@
 </main>
 
 <Footer />
+
+<style>
+    main {
+        display: grid;
+        padding: 20px 0 0 20px;
+        margin-bottom: -50px;
+    }
+</style>

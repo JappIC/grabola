@@ -1,5 +1,12 @@
 
-<div class="finger" {...$$restProps}>
+<script>
+    export let transform = ""
+</script>
+
+<div 
+    class="finger" 
+    style:transform = {transform}
+>
     <div class="phalanx"></div>
     <div class="fingernail"></div>
 </div>

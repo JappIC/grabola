@@ -1,39 +1,47 @@
 <header>
-    <a href="/">Home</a>
-  
+    <a href="/">BAR</a>
     <nav>
-        <ul>
-            <li>
-            <a href="/blog">Blog</a>
-            </li>
-            <li>
-            <a href="/about">About</a>
-            </li>
-            <li>
-            <a href="/contact">Contact</a>
-            </li>
-        </ul>
+        <a href="/tutorial">Tutorial</a>
     </nav>
 </header>
+
+<div class="beam">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
 
 <style>
     header {
         padding: 1rem;
-        background: lightskyblue;
+        background: var(--c-roof);
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-    }
-    
-    ul {
-        margin: 0;
-        list-style-type: none;
-        display: flex;
-        gap: 1rem;
+        box-shadow: 0px 0px 35px 4px #00000045;
     }
     
     a {
         text-decoration: none;
-        color: inherit;
+        color: var(--color-2);
     }
-    </style>
+    
+    .beam{
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 12%;
+    }
+
+    .beam div{
+        width: 30px;
+        height: 25px;
+        background: var(--c-roof);
+        clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+    }
+
+</style>

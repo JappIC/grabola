@@ -7,6 +7,27 @@
 }
 
 :root{
+
+    --color-1:#41514e;
+    --color-2:#63c2bc;
+    --color-3:#cdf1ff;
+    --color-4:#7e3330;
+    --color-5:#f6c55c;
+    --color-6:#b35732;
+    --color-7:#904236;
+    --color-8:#222222;
+    --color-9:#723329;
+    --c-neon: #ff00de;
+    --c-neon-2: #00ffff;
+
+    /* BAR */
+    --c-roof: #09222b;
+    --shadow-bottle: #0000003b;
+    --scroll-shadow-bottle: 8px;
+
+
+
+
     --width-machine: 250px;
     --height-machine: calc(var(--width-machine) *2.5);
 
@@ -21,17 +42,48 @@
 
 body {
     margin: 0;
-    background: rgb(77, 77, 77);
+    background: var(--color-1);
     color: #333;
     font-family: sans-serif;
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto auto 1fr auto;
     height: 100vh;
+    overflow-x: hidden;
+}
+
+body:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    background-image: url(/img/ladrillo.jpg);
+    background-size: 20% auto;
+    background-position: center top;
+    z-index: -1;
+}
+
+::selection {
+    background: var(--c-neon);
+    color: var(--color-3);
+    text-shadow: none;
+}
+
+/* Personalizacion de la barra de desplazamiento para navegadores basados en webkit */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-8);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-5);
+    border-radius: 6px;
+    border: 1px solid var(--color-3);
 }
   
-main {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}

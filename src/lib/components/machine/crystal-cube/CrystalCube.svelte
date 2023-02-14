@@ -1,24 +1,38 @@
 <script>
-  import TheClaw from "./the-claw/TheClaw.svelte";
+
+    import Claw from "./Claw/Claw.svelte";
+  import Arrow from "./content-balls/Arrow.svelte";
+    import ContentBalls from "./content-balls/ContentBalls.svelte";
+
+    export let 
+        clawX = 0,
+        clawRotateZ = 0,
+        fingerRotateZ = 75,
+        down = false,
+        showBall = false,
+        dropBall = false,
+        img = ""
+    ;
 
 </script>
 
 <div class="crystal-cube">
     <div class="cube-back"></div>
     <div class="content">
-        <TheClaw/>
-        <div></div>
-        <div class="content-ball">BOLAS</div>
+        <Claw {clawRotateZ} {down} {fingerRotateZ} {showBall} {dropBall} {img} {clawX} />
+        <Arrow/>
+        <ContentBalls/>
     </div>
 </div>
 
+
 <style>
+    
     .crystal-cube {
-        background-color: #fff;
-        border: 5px solid var(--shadow-color);
-        border-top: 0;
+        border: 5px solid var(--color-9);
         border-bottom-width: 12px;
-        margin: 0 5px;
+        box-sizing: border-box;
+        margin: 0 10px;
         position: relative;
         overflow: hidden;
     }
@@ -45,7 +59,7 @@
         position: relative;
         z-index: 1;
         display: grid;
-        grid-template-rows: 15% 1fr 15%;
+        grid-template-rows: 15% 1fr 30%;
         justify-content: center;
         justify-items: center;
         height: 100%;
@@ -56,10 +70,8 @@
         position: absolute;
         inset: 0;
         width: calc(100% - 30%);
-        background: #532be4;
-        border: 36px solid rgb(148, 18, 18);
-        border-color: #fff #fff #3816b7;
-        border-top: 0px;
+        border: 36px solid rgb(148 18 18 / 0%);
+        border-color: #1d2826 #ffffff40 #3816b7;
         z-index: 0;
     }
     

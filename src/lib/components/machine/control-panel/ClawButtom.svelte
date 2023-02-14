@@ -1,33 +1,11 @@
 <script>
-    let pressed = false;
-
-    /**
-    * @param {{ keyCode: any; }} e
-    */
-
-    function onKeyDown(e) {
-
-    const {key} = e.keyCode
-
-
-    if( e.keyCode === 32 ){
-        
-        pressed = true
-        
-        setTimeout(()=>{
-            pressed = false
-        }, 500);
-
-    }
-}
+    export let pressed = false;
 </script>
-
 
 <div class="claw-buttom">
     <div class="buttom" class:pressed></div>
     <div class="shadow"></div>
 </div>
-<svelte:window on:keydown|preventDefault={onKeyDown} />
 
 <style>
 
