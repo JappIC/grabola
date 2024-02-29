@@ -2,7 +2,6 @@ import { writable } from 'svelte/store';
 
 export const openMusic = writable("P3EgPi-PDyc");
 
-// Tipo de divisa
 export const musicList = writable([
     {
         img:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Django_Reinhardt_%28Gottlieb_07301%29.jpg/220px-Django_Reinhardt_%28Gottlieb_07301%29.jpg",
@@ -520,7 +519,7 @@ export const musicList = writable([
         img:"https://akamai.sscdn.co/letras/500x500/fotos/8/a/6/e/8a6e86fdf0eb53e923710e246da859c3.jpg",
         title:"Caballo Viejo",
         author:"Roberto Torres",
-        video:"UMhfulZu8r",
+        video:"UMhfulZu8r8",
         category:"Salsa",
         seen: false
     },
